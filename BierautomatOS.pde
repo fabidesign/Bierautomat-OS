@@ -47,7 +47,7 @@ void timeTable() {
   
   if (frameCount <= 70) {
     application = "Start";
-  } else if(minute >= 0 && minute <= 20){
+  } else if(minute >= 0 && minute <= 5){
     application = "David";
   } else {
     application = "Dosen";

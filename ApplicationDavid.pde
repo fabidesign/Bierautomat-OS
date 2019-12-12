@@ -31,11 +31,6 @@ void setupDavid() {
   nieves = RG.centerIn(nieves, g);
   pointsNieves = nieves.getPoints();
   posNieves = new PVector(width * 0.25, height / 2 + 25);
-
-  envies = RG.loadShape("envies.svg");
-  envies = RG.centerIn(envies, g);
-  pointsEnvies = envies.getPoints();
-  posEnvies = new PVector(width * 0.75, height / 2 - 25);
 }
 
 float gaussian(float x, float mean, float variance) {
@@ -88,8 +83,7 @@ void runDavid() {
   float pieceScale = x * 0.01;
   //ntln(mprintln(pieceScale);
   pieceScale = constrain(pieceScale, 0, 3);
-  drawSnake(startIndex, posNieves, pointsNieves, (float) TWO_PI * 0.75, globalScale, pieceScale, stepCounter);
-  drawSnake(startIndex, posEnvies, pointsEnvies, (float) TWO_PI * 0.25, globalScale, pieceScale, stepCounter);
+  drawSnake(startIndex, posNieves, pointsNieves, 0, globalScale, pieceScale, stepCounter);
 
   if (stepCounter > 1 ) {
     stepCounter = 0;
