@@ -3,8 +3,6 @@ Dose Qfrisch;
 Dose QfrischT;
 float rz; //rotationspeed
 
-PFont Roboto;
-
 Stern[] sterne = new Stern [300];
 color[] colors = {  
   color(10, 32, 91), 
@@ -18,7 +16,6 @@ int indexColor;
 float speed=1;
 
 void setupDosen() {
-  setupFont();
   setupStar();
   
   Qfrisch = new Dose("Qfrisch.obj", width/5, "2.-", "500ml");
@@ -35,12 +32,6 @@ void runDosen() {
   QfrischT.draw();
   Mate.draw();
   rz += 0.25;
-}
-
-//FONT
-void setupFont() {
-  Roboto = createFont("Roboto-Medium.ttf", 70);
-  textFont(Roboto);
 }
 
 //DOSEN
