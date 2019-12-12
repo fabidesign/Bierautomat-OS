@@ -1,9 +1,11 @@
 import processing.sound.*;
+import geomerative.*;
 SoundFile file;
 
 int d = day();
 int m = month();
 int y = year();
+int minute = 0;
 
 String application = "Start";
 
@@ -19,6 +21,7 @@ void setup()
   
   setupFont();
   setupDosen();
+  setupDavid();
 }
 
 void draw()
@@ -27,8 +30,8 @@ void draw()
   fill(255);
   rect(50, 50, 50, 50);
   println(frameCount);
-
-  checkRun();
+  
+  timeTable();
   runApplication();
 }
 
@@ -39,12 +42,22 @@ void runApplication() {
   if (application == "Start") {
     runStartOS();
   }
+  if (application == "David") {
+    runDavid();
+  }
 }
 
-void checkRun() {
+void timeTable() {
+  timeKeeper();
   if (frameCount <= 70) {
     application = "Start";
+  } else if(minute >= 0 && minute <= 5){
+    application = "David";
   } else {
     application = "Dosen";
   }
+}
+
+void timeKeeper(){
+  minute = minute();
 }
