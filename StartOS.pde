@@ -1,3 +1,10 @@
+import processing.sound.*;
+SoundFile startSound;
+
+void setupStartOS(){
+  startSound = new SoundFile(this, "start.wav");
+}
+
 void runStartOS(){
   background(0);
   pushStyle();
@@ -11,6 +18,6 @@ void runStartOS(){
     text("Bierautomat OS", width/2, height/2);
   popStyle();
   if(frameCount == 2){
-    file.play();
+    startSound.play();
   }
 }

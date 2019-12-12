@@ -1,3 +1,5 @@
+import geomerative.*;
+
 RShape nieves;
 RShape envies;
 
@@ -25,7 +27,7 @@ float x;
 void setupDavid() {
   RG.init(this);
 
-  nieves = RG.loadShape("nieves.svg");
+  nieves = RG.loadShape("line.svg");
   nieves = RG.centerIn(nieves, g);
   pointsNieves = nieves.getPoints();
   posNieves = new PVector(width * 0.25, height / 2 + 25);

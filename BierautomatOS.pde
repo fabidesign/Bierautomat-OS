@@ -1,7 +1,3 @@
-import processing.sound.*;
-import geomerative.*;
-SoundFile file;
-
 int d = day();
 int m = month();
 int y = year();
@@ -17,8 +13,7 @@ void setup()
   pixelDensity(displayDensity());
   println(d, ".", m, ".", y);
   
-  file = new SoundFile(this, "start.wav");
-  
+  setupStartOS();
   setupFont();
   setupDosen();
   setupDavid();
@@ -48,16 +43,13 @@ void runApplication() {
 }
 
 void timeTable() {
-  timeKeeper();
+  minute = minute();
+  
   if (frameCount <= 70) {
     application = "Start";
-  } else if(minute >= 0 && minute <= 5){
+  } else if(minute >= 0 && minute <= 20){
     application = "David";
   } else {
     application = "Dosen";
   }
-}
-
-void timeKeeper(){
-  minute = minute();
 }
