@@ -2,26 +2,31 @@ int d = day();
 int m = month();
 int y = year();
 
-char application = 'x';
+String application = "Dosen";
 
 void setup()
 {
-  size(1920,1080);
+  fullScreen(P3D);
+  ortho();
   frameRate(25);
   pixelDensity(displayDensity());
   println(d, ".", m,".", y);
+  
+  setupDosen();
 }
  
 void draw()
 {
   background(0);
+  fill(255);
+  rect(50,50,50,50);
   println(frameCount);
   
   runApplication();
 }
 
 void runApplication(){
-  if(application == 'x'){
-    runX();
+  if(application == "Dosen"){
+    runDosen();
   }
 }
