@@ -1,6 +1,5 @@
 import geomerative.*;
 
-
 RShape nieves;
 RShape envies;
 
@@ -26,7 +25,7 @@ float magicValue;
 float x;
 
 void setupDavid () {
-  //RG.init(this);
+  RG.init(this);
 
   nieves = RG.loadShape("line.svg");
   nieves = RG.centerIn(nieves, g);
