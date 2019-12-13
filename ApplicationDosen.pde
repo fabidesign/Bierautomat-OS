@@ -19,6 +19,7 @@ class ApplicationDosen {
   int indexColor;
 
   float speed=1; 
+  
   ApplicationDosen () {  
     ortho();
     setupStar();
@@ -27,6 +28,7 @@ class ApplicationDosen {
     QfrischT = new Dose("QfrischT.obj", width/5*2.5, "2.-", "500ml");
     Mate = new Dose("Mate.obj", width/5*4, "2.-", "330ml"); // 1_FILE, 2_POSITION X AXIS, 3_PRISE LABEL, 4_ML AMOUNT
   } 
+  
   void run() { 
     directionalLight(250, 250, 250, 100, 100, -125);
     directionalLight(70, 70, 70, -width, -height, 500);

@@ -31,15 +31,12 @@ void draw()
 void runApplication() {
   if (application == "Dosen") {
     Dosen.run();
-  }
-
-  if (application == "Start") {
+  } else if (application == "Start") {
     runStartOS();
-  }
-  if (application == "David") {
+  } else if (application == "David") {
     runDavid();
   }
-
+  
   //ADD YOUR APPLICATION HERE
 }
 
@@ -53,5 +50,6 @@ void timeTable() {
   } else {
     application = "Dosen";
   }
+  
   //ADD YOUR TIMESLOT HERE
 }
