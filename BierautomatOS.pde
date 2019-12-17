@@ -1,14 +1,20 @@
 /*
-Bierosomat by Interaction Design at Zurich University of the Arts.
+Bierosomate by Interaction Design at Zurich University of the Arts.
  */
 
+//Libraries Setup
+import processing.video.*;
+import processing.sound.*;
+//LOAD LIBRARIES HERE
+
 //Variable Setup
-int minute = 0; //used for counting -> Timetable
+int minute = 0; //Used for counting -> Timetable
 int d = day();
 int m = month();
 int y = year();
-String application = "Start"; //used for application management -> Run Application
+String application = "Start"; //Used for application management -> Run Application
 ApplicationDosen Dosen;
+ApplicationBier Bier;
 
 void setup()
 {
@@ -16,9 +22,9 @@ void setup()
   frameRate(25);
   pixelDensity(displayDensity());
   setupOS();
-
+  
   //Application Setup
-  setupDavid();
+  Bier = new ApplicationBier();
   Dosen = new ApplicationDosen();
 }
 
@@ -28,28 +34,28 @@ void draw()
   runApplication(); //Runs the Application
 }
 
-void runApplication() {
-  if (application == "Dosen") {
-    Dosen.run();
-  } else if (application == "Start") {
-    runStartOS();
-  } else if (application == "David") {
-    runDavid();
-  }
-  
-  //ADD YOUR APPLICATION HERE
-}
-
 void timeTable() {
   minute = minute();
 
   if (frameCount <= 70) {
-    application = "Start";
-  } else if (minute >= 0 && minute <= 5) {
-    application = "David";
+    application = "Start"; //Start Animation
+  } else if (minute >= 0 && minute <= 59) {
+    application = "Bier";
   } else {
     application = "Dosen";
   }
   
   //ADD YOUR TIMESLOT HERE
+}
+
+void runApplication() {
+  if (application == "Dosen") {
+    Dosen.run();
+  } else if (application == "Start") {
+    runStartOS();
+  } else if (application == "Bier") {
+    Bier.run();
+  }
+  
+  //ADD YOUR APPLICATION HERE
 }
