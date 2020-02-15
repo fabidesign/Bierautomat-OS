@@ -3,11 +3,12 @@ PFont Roboto;
 
 void setupOS() {
   //Basics
-  println(d, ".", m, ".", y);
 
   setupFont();  //Loads Font
 
   startSound = new SoundFile(this, "start.wav"); //Start Sound
+  
+  noStroke();
 }
 
 //Start Animation
@@ -19,7 +20,7 @@ void runStartOS() {
   popStyle();
   pushStyle();
   fill(210-frameCount*3);
-  textSize(1*frameCount);
+  textSize(2*frameCount);
   textAlign(CENTER, CENTER);
   text("Bierautomat OS", width/2, height/2);
   popStyle();
@@ -29,6 +30,6 @@ void runStartOS() {
 }
 
 void setupFont() {
-  Roboto = createFont("Roboto-Medium.ttf", 70);
+  Roboto = createFont("caravan-120-aaa.otf", 70);
   textFont(Roboto);
 }

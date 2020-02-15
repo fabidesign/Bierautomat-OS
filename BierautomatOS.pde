@@ -9,12 +9,9 @@ import processing.sound.*;
 
 //Variable Setup
 int minute = 0; //Used for counting -> Timetable
-int d = day();
-int m = month();
-int y = year();
 String application = "Start"; //Used for application management -> Run Application
 ApplicationDosen Dosen;
-ApplicationBier Bier;
+
 
 void setup()
 {
@@ -24,7 +21,6 @@ void setup()
   setupOS();
   
   //Application Setup
-  Bier = new ApplicationBier();
   Dosen = new ApplicationDosen();
 }
 
@@ -32,6 +28,7 @@ void draw()
 {
   timeTable(); //Checks what Application to run
   runApplication(); //Runs the Application
+  showEvent();
 }
 
 void timeTable() {
@@ -40,7 +37,7 @@ void timeTable() {
   if (frameCount <= 70) {
     application = "Start"; //Start Animation
   } else if (minute >= 0 && minute <= 59) {
-    application = "Bier";
+    application = "Dosen";
   } else {
     application = "Dosen";
   }
@@ -53,8 +50,6 @@ void runApplication() {
     Dosen.run();
   } else if (application == "Start") {
     runStartOS();
-  } else if (application == "Bier") {
-    Bier.run();
   }
   
   //ADD YOUR APPLICATION HERE

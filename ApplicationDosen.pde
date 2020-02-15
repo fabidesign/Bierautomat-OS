@@ -1,7 +1,7 @@
 /*
 Dosen by Randy Chen
  */
-
+ 
 class ApplicationDosen { 
   Dose Mate;
   Dose Qfrisch;
